@@ -46,3 +46,25 @@ ENTRYPOINT [ "figlet" ]
 # docker stop reverent_aryabhata
 
 # docker compose up
+
+# *Create Volumes*
+# docker volume create $VOLUME_NAME
+# docker volume ls
+
+# *Create Network*
+# docker network create $NETWORK_NAME
+# docker network ls
+
+# *Run MySQL*
+# docker run --rm -d -v mysql:/var/lib/mysql -v mysql_config:/etc/mysql -p 3316:3306 --network mysqlnet --name mysqldb -e MYSQL_ROOT_PASSWORD=test123 mysql
+# *Enter Database*
+# docker exec –it mysqldb mysql –u root -p
+
+# *Get right version in requirements.txt*
+# pip list | findstr mysql >> requirements.txt
+
+# docker build -t python-docker:1.0.1 .
+# docker run -d -p 5002:5000 python-docker:1.0.1
+
+# *Run MySQL REST-SERVER*
+# docker run --rm -d --network mysqlnet --name rest-server -p 8000:5000 python-docker
