@@ -70,3 +70,11 @@ ENTRYPOINT [ "figlet" ]
 # docker run --rm -d --network mysqlnet --name rest-server -p 8000:5000 python-docker
 
 # docker compose up -d
+# docker-compose -f docker-compose.yml up --build
+
+
+#*Get image from teacher*
+# docker pull ainhoaazqueta/is-cloud:1.0.0
+# docker run -p 5004:5000 -d ainhoaazqueta/is-cloud:1.0.0
+# "-d" is for no logs------^
+

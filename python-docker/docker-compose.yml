@@ -7,6 +7,8 @@ services:
     environment:
       - FLASK_ENV=development
       - MYSQL_ROOT_PASSWORD=p@ssw0rd1
+    networks:
+      - mynet
   mysqldb:
     image: mysql:latest
     ports: 
@@ -16,11 +18,16 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - mysql_config:/etc/mysql
+    networks:
+      - mynet
 volumes:
   mysql:
     driver: local
   mysql_config:
     driver: local
+networks:
+  mynet:
+    driver: bridge
       
 
       
